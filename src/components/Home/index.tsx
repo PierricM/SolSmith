@@ -191,7 +191,7 @@ const Home = (props: HomeProps) => {
         </>
       )}
       {wallet && (<><span>Balance</span><p>{(balance || 0).toLocaleString()} SOL</p></>)}
-      {wallet && (<><span>Mint Price</span><p>{0.7} SOL</p></>)}
+      {wallet && (<><span>Mint Price</span><p>Free</p></>)}
       {/* {wallet && (<><span>Total Available</span><p>{itemsAvailable}</p></>)} */}
       {/* {wallet && (<><span>Redeemed</span><p>{itemsRedeemed}</p></>)} */}
       {/* {wallet && (<><span>Remaining</span><p>{itemsRemaining}</p></>)} */}
