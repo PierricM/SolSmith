@@ -228,7 +228,8 @@ const Home = (props: HomeProps) => {
               "SOLD OUT"
             ) : isActive ? (
               isMinting ? (
-                <CircularProgress />
+                // <CircularProgress />
+                "MINT"
               ) : (
                 "MINT"
               )
