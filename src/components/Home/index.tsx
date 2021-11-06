@@ -22,17 +22,32 @@ import {
 import BannerImage from 'resources/banner.png'
 import "./style.css"
 
-const ConnectButton = styled(WalletDialogButton)``;
+const ConnectButton = styled(WalletDialogButton)`
+  margin-top: 16px !important;
+
+  & > span {
+    justify-content: center;
+  }
+`;
 
 const CounterText = styled.span``; // add your styles here
 
 const MintContainer = styled.div`
-  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  justify-content: center;
+
+  & > p {
+    text-align: center;
+    margin: 4px 0;
+  }
 `; // add your styles here
 
 const MintButton = styled(Button)`
   width: 160px;
-  background-color: #03a9f4;
+  margin-top: 16px !important;
+  background-color: #03a9f4 !important;
   
   & > span {
     justify-content: center;
@@ -191,14 +206,18 @@ const Home = (props: HomeProps) => {
         </>
       )}
       {wallet && (<><span>Balance</span><p>{(balance || 0).toLocaleString()} SOL</p></>)}
-      {wallet && (<><span>Mint Price</span><p>Free</p></>)}
+      {wallet && (<><span>Mint Price</span><p>0.66 SOL</p></>)}
       {/* {wallet && (<><span>Total Available</span><p>{itemsAvailable}</p></>)} */}
       {/* {wallet && (<><span>Redeemed</span><p>{itemsRedeemed}</p></>)} */}
       {/* {wallet && (<><span>Remaining</span><p>{itemsRemaining}</p></>)} */}
 
       <MintContainer>
         {!wallet ? (
+          <>
+          <p>Mint Price : 0.66 SOL</p>
+          <p>1 Mint per Transaction</p>
           <ConnectButton>Connect Wallet</ConnectButton>
+          </>
         ) : (
           <MintButton
             disabled={isSoldOut || isMinting || !isActive}
